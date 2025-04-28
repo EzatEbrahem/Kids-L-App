@@ -1,0 +1,11 @@
+name: flutter_plugin_android_lifecycle
+description: A fork of the Android Lifecycle plugin for Flutter.
+version: 2.0.5
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: io.flutter.plugins.flutter_plugin_android_lifecycle
+        pluginClass: FlutterAndroidLifecyclePlugin

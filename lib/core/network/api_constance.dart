@@ -1,0 +1,5 @@
+class AppConstant{
+static const supAbaseUrl='https://jfbhuhgrypqeftrwsvjf.supabase.co';
+static const supAbaseAnonKey='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmYmh1aGdyeXBxZWZ0cndzdmpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0OTM5MzMsImV4cCI6MjA2MDA2OTkzM30.3EdEB0S4RRAxUujtXDMcpSCgQCUpbyL6KBji0GkSlsU';
+
+}
