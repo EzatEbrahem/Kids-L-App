@@ -3,6 +3,7 @@ import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kids_learning/Predicting/Presentation/Screens/home_screen.dart';
 import 'package:kids_learning/Predicting/Presentation/Screens/intro_screen.dart';
 import 'package:kids_learning/Predicting/Presentation/controller/predict_bloc.dart';
@@ -11,7 +12,6 @@ import 'package:lottie/lottie.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'Authentication/Presentation/contoller/authentication_bloc.dart';
 import 'Authentication/Presentation/screens/sign_in_screen.dart';
-import 'core/network/api_constance.dart';
 import 'core/network/cache_helpher.dart';
 import 'core/services/services_locator.dart';
 
@@ -19,9 +19,10 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   ServicesLocator().init();
   await Firebase.initializeApp();
+  await dotenv.load(fileName: ".env");
   await Supabase.initialize(
-    url: AppConstant.supAbaseUrl,
-    anonKey: AppConstant.supAbaseAnonKey);
+    url: dotenv.env['SUPABASE_URL']!,
+    anonKey: dotenv.env['SUPABASE_ANON_KEY']!);
   await FirebaseAppCheck.instance.activate(
     androidProvider: AndroidProvider.debug,
     appleProvider: AppleProvider.debug,

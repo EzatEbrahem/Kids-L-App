@@ -63,6 +63,7 @@ dependencies:
   top_snackbar_flutter: ^3.0.0
   dartz: ^0.10.1
   get_it: ^8.0.3
+  flutter_dotenv: ^5.2.1
 
 
 
